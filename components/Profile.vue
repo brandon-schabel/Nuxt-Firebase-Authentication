@@ -17,16 +17,7 @@
 </template>
 
 <script>
-  import firestore from 'firebase/firestore'
-  // import firebase from 'firebase'
-  // let db = firebase.firestore()
-  // console.log(db)
-  console.log(firestore)
   export default {
-    methods: {
-      postToFS () {
-      }
-    },
     computed: {
       user () {
         return this.$store.getters.user
