@@ -75,7 +75,7 @@
     watch: {
       user (value) {
         if (value !== null && value !== undefined) {
-          this.$router.push('/index')
+          this.$router.push('/')
         }
       }
     },
