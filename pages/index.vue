@@ -4,19 +4,15 @@
       <div class="text-xs-center">
         Index Page
       </div>
-      <app-signin></app-signin>
+      
     </v-flex>
   </v-layout>
 </template>
 
 <script>
 import * as firebase from 'firebase'
-import Signin from '../components/Signin';
 
 export default {
-  components: {
-    appSignin: Signin
-  },
   created () {
     firebase.initializeApp({
       apiKey: 'AIzaSyC61qoH8POsOd51vjB5LyFL6tiefOnRcGY',
