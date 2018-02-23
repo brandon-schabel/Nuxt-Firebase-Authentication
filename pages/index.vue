@@ -4,7 +4,6 @@
       <div class="text-xs-center">
         Index Page
       </div>
-      
     </v-flex>
   </v-layout>
 </template>

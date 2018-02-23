@@ -5,16 +5,14 @@
       :clipped="clipped"
       v-model="drawer"
       fixed
-      app
-    >
+      app>
       <v-list>
         <v-list-tile
           router
           :to="item.to"
           :key="i"
           v-for="(item, i) in items"
-          exact
-        >
+          exact>
           <v-list-tile-action>
             <v-icon v-html="item.icon"></v-icon>
           </v-list-tile-action>
@@ -23,6 +21,7 @@
           </v-list-tile-content>
         </v-list-tile>
       </v-list>
+
     </v-navigation-drawer>
     <v-toolbar fixed app :clipped-left="clipped">
       <v-toolbar-side-icon @click="drawer = !drawer"></v-toolbar-side-icon>
@@ -47,9 +46,10 @@
         drawer: true,
         fixed: false,
         items: [
-          { icon: 'apps', title: 'Welcome', to: '/' },
-            { icon: 'person', title: 'Profile', to: '/profile' },
+            { icon: 'apps', title: 'Welcome', to: '/' },
             { icon: 'lock_open', title: 'Login', to: '/login' },
+            { icon: 'lock_open', title: 'Register', to: '/register'},
+            { icon: 'person', title: 'Profile', to: '/profile' },
             { icon: 'create', title: 'Admin', to: '/admin'}
         ],
         miniVariant: false,

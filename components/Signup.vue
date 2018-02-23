@@ -85,13 +85,6 @@
         return this.$store.getters.loading
       }
     },
-    watch: {
-      user (value) {
-        if (value !== null && value !== undefined) {
-          this.$router.push('/profile')
-        }
-      }
-    },
     methods: {
       onSignup () {
         this.$store.dispatch('signUserUp', {email: this.email, password: this.password})
