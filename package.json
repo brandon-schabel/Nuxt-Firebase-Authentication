@@ -1,7 +1,7 @@
 {
-  "name": "nuxt-cli-test",
-  "version": "1.0.0",
-  "description": "My dandy Nuxt.js project",
+  "name": "Nuxt-Firebase-Authentication",
+  "version": "0.1.0",
+  "description": "Simple Nuxt Firebase login",
   "author": "brandon-schabel",
   "private": true,
   "scripts": {

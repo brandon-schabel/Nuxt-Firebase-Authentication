@@ -6,7 +6,7 @@
       v-model="drawer"
       fixed
       app>
-      <v-list>
+      <v-list v-if="!user">
         <v-list-tile
           router
           :to="item.to"
@@ -21,6 +21,23 @@
           </v-list-tile-content>
         </v-list-tile>
       </v-list>
+
+      <v-list v-if="user">
+        <v-list-tile
+          router
+          :to="authedItem.to"
+          :key="j"
+          v-for="(authedItem, j) in authedItems"
+          exact>
+          <v-list-tile-action>
+            <v-icon v-html="authedItem.icon"></v-icon>
+          </v-list-tile-action>
+          <v-list-tile-content>
+            <v-list-tile-title v-text="authedItem.title"></v-list-tile-title>
+          </v-list-tile-content>
+        </v-list-tile>
+      </v-list>
+
 
     </v-navigation-drawer>
     <v-toolbar fixed app :clipped-left="clipped">
@@ -48,7 +65,11 @@
         items: [
             { icon: 'apps', title: 'Welcome', to: '/' },
             { icon: 'lock_open', title: 'Login', to: '/login' },
-            { icon: 'lock_open', title: 'Register', to: '/register'},
+            { icon: 'lock_open', title: 'Register', to: '/register'}
+        ],
+
+        authedItems: [
+            { icon: 'apps', title: 'Welcome', to: '/' },
             { icon: 'person', title: 'Profile', to: '/profile' },
             { icon: 'create', title: 'Admin', to: '/admin'}
         ],

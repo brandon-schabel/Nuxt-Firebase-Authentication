@@ -1,4 +1,4 @@
-# nuxt-cli-test
+# Nuxt Firebase Authentication
 
 > Basic login using Nuxt and Firebase
 
