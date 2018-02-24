@@ -5,12 +5,14 @@ export default {
     user: null
   },
   mutations: {
-    setUser (state, payload) {
+    setUser(state, payload) {
       state.user = payload
     }
   },
   actions: {
-    signUserUp ({commit}, payload) {
+    signUserUp({
+      commit
+    }, payload) {
       commit('setLoading', true)
       commit('clearError')
       firebase.auth().createUserWithEmailAndPassword(payload.email, payload.password)
@@ -34,7 +36,9 @@ export default {
           }
         )
     },
-    signUserIn ({commit}, payload) {
+    signUserIn({
+      commit
+    }, payload) {
       commit('setLoading', true)
       commit('clearError')
       firebase.auth().signInWithEmailAndPassword(payload.email, payload.password)
@@ -58,7 +62,9 @@ export default {
           }
         )
     },
-    signUserInGoogle ({commit}) {
+    signUserInGoogle({
+      commit
+    }) {
       commit('setLoading', true)
       commit('clearError')
       firebase.auth().signInWithPopup(new firebase.auth.GoogleAuthProvider())
@@ -82,7 +88,9 @@ export default {
           }
         )
     },
-    autoSignIn ({commit}, payload) {
+    autoSignIn({
+      commit
+    }, payload) {
       commit('setUser', {
         id: payload.uid,
         name: payload.displayName,
@@ -90,13 +98,15 @@ export default {
         photoUrl: payload.photoURL
       })
     },
-    logout ({commit}) {
+    logout({
+      commit
+    }) {
       firebase.auth().signOut()
       commit('setUser', null)
     }
   },
   getters: {
-    user (state) {
+    user(state) {
       return state.user
     }
   }
