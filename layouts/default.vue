@@ -1,18 +1,8 @@
 <template>
   <v-app dark>
-    <v-navigation-drawer
-      :mini-variant="miniVariant"
-      :clipped="clipped"
-      v-model="drawer"
-      fixed
-      app>
+    <v-navigation-drawer :mini-variant="miniVariant" :clipped="clipped" v-model="drawer" fixed app>
       <v-list v-if="!user">
-        <v-list-tile
-          router
-          :to="item.to"
-          :key="i"
-          v-for="(item, i) in items"
-          exact>
+        <v-list-tile router :to="item.to" :key="i" v-for="(item, i) in items" exact>
           <v-list-tile-action>
             <v-icon v-html="item.icon"></v-icon>
           </v-list-tile-action>
@@ -23,12 +13,7 @@
       </v-list>
 
       <v-list v-if="user">
-        <v-list-tile
-          router
-          :to="authedItem.to"
-          :key="j"
-          v-for="(authedItem, j) in authedItems"
-          exact>
+        <v-list-tile router :to="authedItem.to" :key="j" v-for="(authedItem, j) in authedItems" exact>
           <v-list-tile-action>
             <v-icon v-html="authedItem.icon"></v-icon>
           </v-list-tile-action>
@@ -62,26 +47,49 @@
         clipped: false,
         drawer: true,
         fixed: false,
-        items: [
-            { icon: 'apps', title: 'Welcome', to: '/' },
-            { icon: 'lock_open', title: 'Login', to: '/login' },
-            { icon: 'lock_open', title: 'Register', to: '/register'}
+        items: [{
+            icon: 'apps',
+            title: 'Welcome',
+            to: '/'
+          },
+          {
+            icon: 'lock_open',
+            title: 'Login',
+            to: '/login'
+          },
+          {
+            icon: 'lock_open',
+            title: 'Register',
+            to: '/register'
+          }
         ],
 
-        authedItems: [
-            { icon: 'apps', title: 'Welcome', to: '/' },
-            { icon: 'person', title: 'Profile', to: '/profile' },
-            { icon: 'create', title: 'Admin', to: '/admin'}
+        authedItems: [{
+            icon: 'apps',
+            title: 'Welcome',
+            to: '/'
+          },
+          {
+            icon: 'person',
+            title: 'Profile',
+            to: '/profile'
+          },
+          {
+            icon: 'create',
+            title: 'Admin',
+            to: '/admin'
+          }
         ],
         miniVariant: false,
         title: 'Nuxt Firebase Login'
       }
     },
     computed: {
-      user () {
+      user() {
         return this.$store.getters.user
       },
-      
+
     },
   }
+
 </script>

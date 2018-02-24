@@ -7,24 +7,25 @@
 </template>
 
 <script>
-import Signup from "../components/Signup"
+  import Signup from "../components/Signup"
 
-export default {
-  middleware: ["loginRedirect"],
-  computed: {
-    user() {
-      return this.$store.getters.user;
-    }
-  },
-  watch: {
-    user(value) {
-      if (value !== null && value !== undefined) {
-        this.$router.push("/profile")
+  export default {
+    middleware: ["loginRedirect"],
+    computed: {
+      user() {
+        return this.$store.getters.user
       }
+    },
+    watch: {
+      user(value) {
+        if (value !== null && value !== undefined) {
+          this.$router.push("/profile")
+        }
+      }
+    },
+    components: {
+      appSignup: Signup
     }
-  },
-  components: {
-    appSignup: Signup
   }
-};
+
 </script>

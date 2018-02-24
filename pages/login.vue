@@ -7,17 +7,18 @@
 </template>
 
 <script>
-import Signin from "../components/Signin"
+  import Signin from "../components/Signin"
 
-export default {
-  middleware: ["loginRedirect"],
-  computed: {
-    user() {
-      return this.$store.getters.user;
+  export default {
+    middleware: ["loginRedirect"],
+    computed: {
+      user() {
+        return this.$store.getters.user
+      }
+    },
+    components: {
+      appSignin: Signin
     }
-  },
-  components: {
-    appSignin: Signin
   }
-};
+
 </script>
